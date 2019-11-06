@@ -11,6 +11,7 @@ class Cart extends React.Component {
         return(
             <div className="d-block">
                 <h2>Cart</h2>
+                <div>Total count: {this.props.products.length}</div>
                 <table>
                     <tbody>
                         {cartList}

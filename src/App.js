@@ -44,11 +44,9 @@ class App extends React.Component {
           cartList: cartList
         } 
       });
-      //console.log(this.state.cartList);
   }
 
   removeItem = (index) => {
-    console.log(index);
     const cartList = [...this.state.cartList];
     cartList.splice(index,1);
     this.setState({cartList});

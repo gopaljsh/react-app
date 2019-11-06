@@ -52,11 +52,19 @@ class App extends React.Component {
     this.setState({cartList});
   }
 
+  sortProduct = () => {
+    let products = [...this.state.productList];
+    products = products.sort((a,b) => {
+      return a.productname.localeCompare(b.productname);
+    });
+    this.setState({productList: products});
+  }
+
   render() {
     return (
       <div className="App">
         <div className="container">
-          <ProductList products={this.state.productList} addItem={this.addItem} />
+          <ProductList products={this.state.productList} addItem={this.addItem} sortItem={this.sortProduct} />
           <Cart products={this.state.cartList} removeItem={this.removeItem} />
         </div>
       </div>

@@ -2,6 +2,11 @@ import React from 'react';
 import ProductItem from './product-item/product-item';
 
 class ProductList extends React.Component {
+    sortItems = () => {
+        let products = this.props.products.sort((a,b) => {
+            return a.productname.localeCompare(b.productname);
+        });
+    }
     render() {
         let product = this.props.products.map((product, index) => {
             return (
@@ -11,6 +16,7 @@ class ProductList extends React.Component {
         return (
             <div className="d-block">
                 <h2>Product</h2>
+                <button onClick={this.props.sortItem}>Sort Product</button>
                 <table colSpan="0">
                     <tbody>
                         {product}
